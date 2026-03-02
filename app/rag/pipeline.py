@@ -12,7 +12,7 @@ class RagPipeline:
     def __init__(self):
         self.embedder = Embedder(settings.embedding_model)
 
-        # we can choose model, thus check the model to get the dim
+        # Derive embedding dimension(dim) from model output
         probe = self.embedder.encode(["probe"])
         dim = probe.shape[1]
 

@@ -9,7 +9,7 @@ class FaissStore:
         self.meta_path = meta_path
         self.dim = dim
 
-        # FAISS uses volatile storage(RAM), so we eventually store it to files using persist()
+        # FAISS uses volatile storage(RAM); persist() writes index and metadata to disk
         self.index = faiss.IndexFlatIP(dim) # cosine similarity: inner product after normalization
         self.meta = []  # list[dict] each corresponds to a vector
 

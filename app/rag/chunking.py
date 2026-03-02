@@ -1,5 +1,5 @@
 def chunk_text(text: str, chunk_size: int = 800, overlap: int = 120) -> list[str]:
-    text = text.strip() # in case to remove white-space before & after of a text
+    text = text.strip()
     if not text:
         return []
     chunks = []

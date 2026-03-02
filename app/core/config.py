@@ -12,7 +12,7 @@ class Settings(BaseSettings):
 
 settings = Settings()
 
-# embedding_model : picked by
+# embedding_model selection depends on:
 # 1) Semantic difficulty
-# 2) total data size
-# 3) speed requirements
+# 2) dataset size
+# 3) latency requirements
