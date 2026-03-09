@@ -1,5 +1,9 @@
 # RAG Backend Service (FastAPI + FAISS)
 
+A backend system implementing Retrieval-Augmented Generation (RAG) with
+document ingestion, embedding pipelines, vector search, and API query
+orchestration.
+
 ## Tech Stack
 
 - Python 3.12
@@ -11,6 +15,18 @@
 
 ---
 
+## Project Structure
+```
+app/
+  main.py
+  routes/
+  pipeline/
+  embeddings/
+  storage/
+
+config.py
+requirements.txt
+```
 ## Overview
 This project is a backend Retrieval-Augmented Generation (RAG) service built with FastAPI. It ingests text, converts it into vector embeddings, stores them in FAISS, and retrieves relevant context using cosine similarity search.
 
@@ -59,6 +75,14 @@ This separation keeps vector search fast while preserving contextual information
 - Treats persistence as part of the backend lifecycle (startup initialization vs runtime requests)
 
 ---
+
+## Example Request Flow
+
+1.  Client sends `POST /query`
+2.  Question converted to embedding vector
+3.  FAISS performs similarity search
+4.  Metadata retrieved for contextual chunks
+5.  API returns answer, evidence, scores, and timing data
 
 ## API Endpoints
 
